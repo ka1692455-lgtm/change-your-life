@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CHANGE YOUR LIFE — Discipline, Motivation et Réussite Personnelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B0A08;--ink-2:#15130F;--line:#2A2620;--gold:#C9A24A;--gold-hi:#E3C372;--paper:#F5F1E8;--mute:#A59D8C;--bad:#D9826F;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font:400 16px/1.6 var(--sans);padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit}
+.wrap{width:min(960px,92%);margin:0 auto}
+header{position:sticky;top:0;z-index:10;background:rgba(11,10,8,.92);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:600 1.25rem var(--serif);letter-spacing:.06em;color:var(--gold);text-decoration:none}
+nav a{font-size:.9rem;color:var(--mute);text-decoration:none;margin-left:1.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.9rem 1.5rem;border-radius:999px;border:1px solid var(--gold);background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:var(--ink);font:700 1rem var(--sans);text-decoration:none;cursor:pointer;width:100%;transition:transform .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+.view{display:none;padding:2.5rem 0 4rem}
+.view.on{display:block}
+.hero{display:grid;gap:2.5rem;align-items:center;padding:2.5rem 0 3rem}
+@media(min-width:800px){.hero{grid-template-columns:1fr 1fr;padding:4rem 0}}
+.cover{aspect-ratio:3/4;max-width:300px;width:100%;margin:0 auto;border-radius:4px 12px 12px 4px;background:radial-gradient(120% 90% at 30% 10%,#2b261c,#0d0c0a 70%);border:1px solid var(--gold);box-shadow:-14px 18px 40px -12px #000;display:flex;flex-direction:column;justify-content:space-between;padding:2rem 1.5rem;text-align:center}
+.cover .t{font:600 2rem/1.1 var(--serif);color:var(--gold-hi);margin-top:1.5rem}
+.cover .s{font-size:.7rem;letter-spacing:.3em;color:var(--mute)}
+.cover .b{font:500 1rem var(--serif);border-top:1px solid var(--line);padding-top:1rem}
+h1{font:600 clamp(2.4rem,6vw,3.6rem)/1.02 var(--serif)}
+h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.1 var(--serif);margin-bottom:1rem}
+h3{font:600 1.25rem var(--serif);margin-bottom:.4rem}
+.lead{color:var(--mute);font-size:1.08rem;margin:1rem 0 1.5rem;max-width:44ch}
+.price{font:600 2.2rem var(--serif);color:var(--gold-hi)}
+.price small{font:400 .9rem var(--sans);color:var(--mute);margin-left:.4rem}
+.meta{list-style:none;margin:1.25rem 0 1.75rem;color:var(--mute);font-size:.95rem}
+.section{padding:3rem 0;border-top:1px solid var(--line)}
+.grid{display:grid;gap:1rem}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:1.4rem}
+.card p{color:var(--mute);font-size:.95rem}
+ul.check{list-style:none}
+ul.check li{padding:.45rem 0 .45rem 1.6rem;position:relative}
+ul.check li::before{content:"";position:absolute;left:0;top:.95rem;width:.7rem;height:.4rem;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.plan div{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);color:var(--mute)}
+.plan strong{color:var(--gold)}
+details{border-bottom:1px solid var(--line);padding:1rem 0}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--mute);margin-top:.6rem}
+.cta-end{text-align:center;padding-top:3rem}
+.cta-end .btn{max-width:360px}
+.back{background:none;border:0;color:var(--mute);font:500 .95rem var(--sans);cursor:pointer;padding:.5rem 0;margin-bottom:1rem}
+form{display:grid;gap:1.1rem;max-width:520px}
+label{display:grid;gap:.4rem;font-weight:700;font-size:.92rem}
+label span.opt{color:var(--mute);font-weight:400}
+input{font:400 1rem var(--sans);color:var(--paper);background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;min-height:52px;width:100%}
+.err{color:var(--bad);font-size:.88rem;min-height:1.2em}
+.recap{max-width:520px;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:1.25rem;margin:0 0 1.5rem}
+.recap div{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;color:var(--mute);font-size:.95rem}
+.recap .tot{color:var(--gold-hi);font-weight:700;border-top:1px solid var(--line);margin-top:.5rem;padding-top:.7rem}
+.box{max-width:520px;border:1px solid var(--gold);border-radius:14px;padding:1.25rem;background:rgba(201,162,74,.06);margin-top:1.5rem}
+.box p{color:var(--mute);font-size:.95rem}
+.steps{list-style:none;counter-reset:s;max-width:560px;margin:1rem 0 1.5rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;padding:.6rem 0}
+.steps li::before{content:counter(s);width:2rem;height:2rem;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-weight:700}
+.pill{display:inline-block;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--gold-hi);color:var(--gold-hi);font-size:.85rem;font-weight:700}
+.pill.ok{border-color:#7FB58A;color:#7FB58A}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.order-id{font:600 1.4rem var(--serif);color:var(--gold-hi);margin:.4rem 0 1rem}
+.note{color:var(--mute);font-size:.9rem;margin-top:1rem;max-width:560px}
+.alert{color:var(--bad);margin-top:1rem}
+.footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--mute);font-size:.88rem;text-align:center}
+.footer a{margin:0 .6rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#accueil">CHANGE YOUR LIFE</a>
+    <nav><a href="#accueil">Accueil</a><a href="#suivi">Suivre ma commande</a></nav>
+  </div>
+</header>
+
+<main>
+<section id="accueil" class="view on">
+  <div class="wrap">
+    <div class="hero">
+      <div class="cover" aria-hidden="true">
+        <div class="s">ÉDITION PREMIUM</div>
+        <div class="t">DISCIPLINE<br>MOTIVATION<br>ET RÉUSSITE<br>PERSONNELLE</div>
+        <div class="b">Le guide pratique</div>
+      </div>
+      <div>
+        <p style="color:var(--gold);margin-bottom:.6rem">Change tes habitudes. Transforme ta vie.</p>
+        <h1>Discipline, Motivation et Réussite Personnelle</h1>
+        <p class="lead">Le guide pratique pour développer de bonnes habitudes et atteindre tes objectifs.</p>
+        <div class="price">2 500 FCFA<small>paiement unique</small></div>
+        <ul class="meta"><li>Format : PDF numérique</li><li>Livraison après vérification du paiement</li></ul>
+        <a class="btn" href="#commande">Acheter mon ebook</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Ce que tu vas découvrir</h2>
+      <div class="grid">
+        <div class="card"><h3>Discipline au quotidien</h3><p>Construire une routine réaliste et agir même quand la motivation baisse.</p></div>
+        <div class="card"><h3>Motivation et confiance</h3><p>Bâtir la confiance à partir de petites actions tenues.</p></div>
+        <div class="card"><h3>Habitudes durables</h3><p>Rendre le déclencheur évident, l’action facile et le suivi visible.</p></div>
+        <div class="card"><h3>Objectifs et productivité</h3><p>Transformer un objectif flou en étapes datées et en première action.</p></div>
+      </div>
+      <ul class="check" style="margin-top:1.5rem">
+        <li>Sortir de la procrastination avec une première étape minuscule</li>
+        <li>Garder le cap avec la « version minimale » de tes habitudes</li>
+        <li>Anticiper tes obstacles avec la méthode « si… alors… »</li>
+        <li>Suivre tes progrès sans te comparer à une version parfaite de toi-même</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Plan d’action sur 30 jours</h2>
+      <p class="lead">Quatre semaines, une action simple chaque jour.</p>
+      <div class="plan">
+        <div><strong>Semaine 1</strong>Prise de conscience et organisation</div>
+        <div><strong>Semaine 2</strong>Discipline et nouvelles habitudes</div>
+        <div><strong>Semaine 3</strong>Concentration et progression</div>
+        <div><strong>Semaine 4</strong>Consolidation et préparation de la suite</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Comment je reçois l’ebook ?</summary><p>Tu paies 2 500 FCFA avec Wave, puis tu envoies ta preuve sur WhatsApp. Une fois le paiement vérifié, le téléchargement est débloqué sur ton suivi de commande.</p></details>
+      <details><summary>Quel moyen de paiement acceptez-vous ?</summary><p>Uniquement Wave, pour un montant fixe de 2 500 FCFA.</p></details>
+      <details><summary>Pourquoi faut-il attendre la vérification ?</summary><p>Chaque paiement est vérifié manuellement avant la livraison.</p></details>
+      <details><summary>Le guide remplace-t-il un avis professionnel ?</summary><p>Non. Il propose des pistes générales de développement personnel.</p></details>
+      <details><summary>Comment vous contacter ?</summary><p>Par WhatsApp au +225 05 64 16 99 42.</p></details>
+    </div>
+
+    <div class="cta-end"><a class="btn" href="#commande">Acheter mon ebook</a></div>
+  </div>
+</section>
+
+<section id="commande" class="view">
+  <div class="wrap">
+    <button class="back" data-go="accueil">← Retour</button>
+    <h2>Informations de commande</h2>
+    <p class="lead">Renseigne tes informations pour créer ta commande.</p>
+    <div class="recap">
+      <div><span>Produit</span><span>Discipline, Motivation et Réussite Personnelle</span></div>
+      <div><span>Quantité</span><span>1</span></div>
+      <div class="tot"><span>Total</span><span>2 500 FCFA</span></div>
+    </div>
+    <form id="form-cmd" novalidate>
+      <label>Nom et prénom
+        <input id="nom" autocomplete="name" placeholder="Ex. : Koffi Amadou">
+        <span class="err" id="err-nom"></span>
+      </label>
+      <label>Numéro WhatsApp
+        <input id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex. : 07 00 00 00 00">
+        <span class="err" id="err-tel"></span>
+      </label>
+      <label>Adresse e-mail <span class="opt">(facultative)</span>
+        <input id="email" type="email" autocomplete="email" placeholder="Ex. : nom@email.com">
+        <span class="err" id="err-email"></span>
+      </label>
+      <button class="btn" id="btn-cmd" type="submit">Créer ma commande</button>
+      <p class="alert" id="cmd-alert" hidden></p>
+    </form>
+  </div>
+</section>
+
+<section id="paiement" class="view">
+  <div class="wrap">
+    <button class="back" data-go="commande">← Modifier mes informations</button>
+    <h2>Paiement avec Wave</h2>
+    <p class="lead">Commande <strong class="order-id-inline"></strong></p>
+    <div class="recap"><div><span>Montant à payer</span><strong style="color:var(--gold-hi)">2 500 FCFA</strong></div></div>
+    <a class="btn" href="https://pay.wave.com/m/M_ci_4B8TDo5cxIaI/c/ci/?amount=2500" target="_blank" rel="noopener noreferrer">Payer avec Wave</a>
+    <div class="box">
+      <p>Après le paiement, reviens sur ce site pour envoyer ta preuve.</p>
+      <button class="btn ghost" style="margin-top:1rem" data-go="preuve">J’ai payé, étape suivante</button>
+    </div>
+  </div>
+</section>
+
+<section id="preuve" class="view">
+  <div class="wrap">
+    <h2>Confirme ton paiement pour recevoir ton ebook</h2>
+    <p class="lead">Ta commande <strong class="order-id-inline"></strong> est enregistrée. Statut : <span class="pill">Paiement à vérifier</span></p>
+    <ol class="steps">
+      <li><span>Effectue le paiement de 2 500 FCFA via Wave.</span></li>
+      <li><span>Fais une capture d’écran de la confirmation.</span></li>
+      <li><span>Clique sur le bouton ci-dessous pour ouvrir WhatsApp.</span></li>
+      <li><span>Joins toi-même la capture d’écran dans la conversation. Le site ne peut pas l’ajouter.</span></li>
+      <li><span>Attends la vérification avant de recevoir ton ebook.</span></li>
+    </ol>
+    <a class="btn" id="btn-wa" href="https://wa.me/2250564169942" target="_blank" rel="noopener noreferrer">Envoyer ma preuve sur WhatsApp</a>
+    <p class="note">Ton lien de suivi personnel : <a id="my-link" href="#suivi"></a></p>
+    <p class="note">Enregistre ce lien. C’est le seul moyen de retrouver ta commande et ton téléchargement.</p>
+  </div>
+</section>
+
+<section id="suivi" class="view">
+  <div class="wrap">
+    <h2>Suivre ma commande</h2>
+    <div class="recap" id="track-box"><p style="color:var(--mute)">Chargement…</p></div>
+    <p class="note">Besoin d’aide ? WhatsApp : +225 05 64 16 99 42</p>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>CHANGE YOUR LIFE · © 2026 · Tous droits réservés</p>
+    <p style="margin-top:.5rem"><a href="#suivi">Suivi de commande</a><a href="https://wa.me/2250564169942" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SB_URL = "https://dwujqwghxwvkpfqlatpq.supabase.co";
+  var SB_KEY = "sb_publishable_6fiCzo0-CB60aJxVNMorMw_P0sIxy8u";
+  var WA = "2250564169942";
+  var KEY = "cyl_order_v2";
+  var HDR = { "apikey": SB_KEY, "Authorization": "Bearer " + SB_KEY, "Content-Type": "application/json" };
+  var LABELS = {
+    paiement_a_verifier: ["Paiement à vérifier", ""],
+    paiement_confirme: ["Paiement confirmé", "ok"],
+    paiement_refuse: ["Paiement refusé", "bad"]
+  };
+  var views = ["accueil","commande","paiement","preuve","suivi"];
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function loadOrder(){ try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch(e){ return null; } }
+  function saveOrder(o){ try { localStorage.setItem(KEY, JSON.stringify(o)); } catch(e){} }
+
+  function absorbLink(){
+    var m = location.hash.match(/^#suivi\?(.*)$/);
+    if(!m) return;
+    var p = new URLSearchParams(m[1]);
+    if(p.get("id") && p.get("t")) saveOrder({ id: p.get("id"), token: p.get("t"), nom: "" });
+  }
+
+  function show(id){
+    if(views.indexOf(id) < 0) id = "accueil";
+    views.forEach(function(v){ document.getElementById(v).classList.toggle("on", v === id); });
+    window.scrollTo(0,0);
+    if(id === "paiement" || id === "preuve") fillOrder();
+    if(id === "suivi") renderTrack();
+  }
+
+  function route(){
+    absorbLink();
+    var h = (location.hash || "#accueil").slice(1).split("?")[0];
+    if((h === "paiement" || h === "preuve") && !loadOrder()){ location.hash = "commande"; return; }
+    show(h);
+  }
+
+  function fillOrder(){
+    var o = loadOrder(); if(!o) return;
+    document.querySelectorAll(".order-id-inline").forEach(function(el){ el.textContent = o.id; });
+    var msg = "Bonjour, je viens d’effectuer le paiement de mon ebook.\n" +
+      "Numéro de commande : " + o.id + "\n" +
+      "Montant payé : 2 500 FCFA\n" +
+      "Je joins la capture d’écran de ma preuve de paiement.";
+    document.getElementById("btn-wa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    var link = location.origin + location.pathname + "#suivi?id=" + encodeURIComponent(o.id) + "&t=" + encodeURIComponent(o.token);
+    var a = document.getElementById("my-link"); a.href = link; a.textContent = "Ouvrir mon suivi";
+  }
+
+  async function fetchStatus(o){
+    var r = await fetch(SB_URL + "/rest/v1/rpc/get_order_status", {
+      method: "POST", headers: HDR, body: JSON.stringify({ p_id: o.id, p_token: o.token })
+    });
+    if(!r.ok) throw new Error("status");
+    var rows = await r.json();
+    return rows && rows[0] ? rows[0] : null;
+  }
+
+  async function renderTrack(){
+    var box = document.getElementById("track-box");
+    var o = loadOrder();
+    if(!o){ box.innerHTML = '<p style="color:var(--mute)">Aucune commande trouvée sur cet appareil. Passe une commande ou ouvre ton lien personnel.</p>'; return; }
+    box.innerHTML = '<p style="color:var(--mute)">Chargement…</p>';
+    var s;
+    try { s = await fetchStatus(o); }
+    catch(e){ box.innerHTML = '<p class="alert">Impossible de charger le statut. Réessaie dans un instant.</p>'; return; }
+    if(!s){ box.innerHTML = '<p class="alert">Commande introuvable. Vérifie ton lien personnel.</p>'; return; }
+
+    var lab = LABELS[s.statut] || ["Statut inconnu", ""];
+    var html = '<p>Commande <strong style="color:var(--gold-hi)">' + esc(s.id) + '</strong></p>' +
+      '<p style="margin:.6rem 0 1rem">Statut : <span class="pill ' + lab[1] + '">' + lab[0] + '</span></p>';
+
+    if(s.statut === "paiement_confirme"){
+      html += '<p style="margin-bottom:1rem">Ton paiement a été confirmé. Ton ebook est prêt !</p>' +
+        '<button class="btn" id="btn-dl">Télécharger mon ebook</button><p class="alert" id="dl-err" hidden></p>';
+    } else if(s.statut === "paiement_refuse"){
+      html += '<p class="alert">Ton paiement a été refusé.' + (s.motif_refus ? ' Motif : ' + esc(s.motif_refus) : '') + '</p>' +
+        '<p class="note">Contacte-nous sur WhatsApp pour régler la situation.</p>';
+    } else {
+      html += '<p class="note">Ton paiement est en cours de vérification. Le téléchargement apparaîtra ici dès confirmation.</p>';
+    }
+    box.innerHTML = html;
+
+    var dl = document.getElementById("btn-dl");
+    if(dl) dl.addEventListener("click", async function(){
+      dl.disabled = true;
+      var err = document.getElementById("dl-err");
+      try {
+        var r = await fetch(SB_URL + "/functions/v1/get-download", {
+          method: "POST", headers: HDR, body: JSON.stringify({ id: o.id, token: o.token })
+        });
+        var d = await r.json();
+        if(!r.ok || !d.url) throw new Error(d.error || "Erreur");
+        location.href = d.url;
+      } catch(e){
+        err.hidden = false; err.textContent = "Téléchargement impossible pour le moment. Contacte-nous sur WhatsApp.";
+      } finally { dl.disabled = false; }
+    });
+  }
+
+  document.addEventListener("click", function(e){
+    var go = e.target.closest("[data-go]");
+    if(go){ e.preventDefault(); location.hash = go.getAttribute("data-go"); }
+  });
+  window.addEventListener("hashchange", route);
+
+  document.getElementById("form-cmd").addEventListener("submit", async function(e){
+    e.preventDefault();
+    var nom = document.getElementById("nom").value.trim();
+    var tel = document.getElementById("tel").value.replace(/[^\d+]/g, "");
+    var email = document.getElementById("email").value.trim();
+    var digits = tel.replace(/\D/g, "");
+    var ok = true;
+
+    document.getElementById("err-nom").textContent = nom.length < 2 ? "Indique ton nom et ton prénom." : "";
+    if(nom.length < 2) ok = false;
+    document.getElementById("err-tel").textContent = digits.length < 8 ? "Indique un numéro WhatsApp valide." : "";
+    if(digits.length < 8) ok = false;
+    var emailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    document.getElementById("err-email").textContent = emailOk ? "" : "Adresse e-mail invalide.";
+    if(!emailOk) ok = false;
+    if(!ok) return;
+
+    var btn = document.getElementById("btn-cmd"), alertBox = document.getElementById("cmd-alert");
+    btn.disabled = true; alertBox.hidden = true;
+
+    var id = "CYL-" + new Date().getFullYear() + "-" + Math.floor(100000 + Math.random() * 900000);
+    var token = crypto.randomUUID();
+    try {
+      var r = await fetch(SB_URL + "/rest/v1/orders", {
+        method: "POST",
+        headers: Object.assign({}, HDR, { "Prefer": "return=minimal" }),
+        body: JSON.stringify({ id: id, nom: nom, telephone: tel, email: email || null, montant: 2500, statut: "paiement_a_verifier", access_token: token })
+      });
+      if(!r.ok) throw new Error(await r.text());
+      saveOrder({ id: id, token: token, nom: nom });
+      document.getElementById("form-cmd").reset();
+      location.hash = "paiement";
+    } catch(err){
+      alertBox.hidden = false;
+      alertBox.textContent = "La commande n’a pas pu être enregistrée. Vérifie ta connexion et réessaie.";
+    } finally { btn.disabled = false; }
+  });
+
+  route();
+})();
+</script>
+</body>
+</html>
