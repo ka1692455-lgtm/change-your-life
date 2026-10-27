@@ -226,7 +226,7 @@ input{font:400 1rem var(--sans);color:var(--paper);background:var(--ink-2);borde
   var SB_KEY = "sb_publishable_6fiCzo0-CB60aJxVNMorMw_P0sIxy8u";
   var WA = "2250564169942";
   var KEY = "cyl_order_v2";
-  var HDR = { "apikey": SB_KEY, "Authorization": "Bearer " + SB_KEY, "Content-Type": "application/json" };
+  var HDR = { "apikey": SB_KEY, "Content-Type": "application/json" };
   var LABELS = {
     paiement_a_verifier: ["Paiement à vérifier", ""],
     paiement_confirme: ["Paiement confirmé", "ok"],
@@ -363,7 +363,7 @@ input{font:400 1rem var(--sans);color:var(--paper);background:var(--ink-2);borde
       location.hash = "paiement";
     } catch(err){
       alertBox.hidden = false;
-      alertBox.textContent = "La commande n’a pas pu être enregistrée. Vérifie ta connexion et réessaie.";
+      alertBox.textContent = "La commande n’a pas pu être enregistrée. Détail : " + (err && err.message ? err.message : "inconnu");
     } finally { btn.disabled = false; }
   });
 
